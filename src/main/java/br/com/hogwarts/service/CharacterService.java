@@ -37,7 +37,7 @@ public class CharacterService {
     }
 
     public boolean validateHouseKey(String houseKey) throws JsonProcessingException {
-        if(houseKey != null && !houseKey.isBlank()){
+        if(houseKey != null && !houseKey.isEmpty()){
             RestTemplate restTemplate = new RestTemplateBuilder().build();
             String URL = HOUSE_ROUTE + "?key="+POTTER_API_KEY;
             String validKeys = restTemplate.getForObject(URL,String.class);

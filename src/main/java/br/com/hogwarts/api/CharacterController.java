@@ -46,7 +46,7 @@ public class CharacterController {
 
     @GetMapping(produces = "application/json")
     public Iterable<Character> listCharacters(String house) throws JsonProcessingException {
-        if(house != null &&!house.isBlank()){
+        if(house != null &&!house.isEmpty()){
             return characterRepository.findByHouse(house);
         } else{
             return characterRepository.findAll();
